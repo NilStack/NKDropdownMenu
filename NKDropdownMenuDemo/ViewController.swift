@@ -16,14 +16,16 @@ class ViewController: UIViewController {
         
         let items = ["Most Popular", "Latest", "Trending", "Nearest", "Top Picks"]
         
-        let hamburgerMenu: NKDropdownMenu = NKDropdownMenu(items: items)
+        let dropdownMenu: NKDropdownMenu = NKDropdownMenu(items: items)
         
-        hamburgerMenu.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
+        dropdownMenu.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
             print("Did select item at index: \(indexPath)")
             
         }
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: hamburgerMenu)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: dropdownMenu)
+        
+        self.view.backgroundColor = UIColor(red: 244.0 / 255.0, green: 244.0 / 255.0, blue: 244.0 / 255.0, alpha: 1.0)
     }
 
   
