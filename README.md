@@ -7,6 +7,14 @@ A drop down menu inspired by https://dribbble.com/shots/2286361-Hamburger-Menu-A
 
  ![gif](https://db.tt/H0ZclkeB)
 
+ ##Usage##
+
+ ###Cocoapods###
+
+     pod 'NKDropdownMenu'
+
+ ###Copy NKDropdownMenu folder to your project ###
+
 ##Examples##
 
 ```Swift
