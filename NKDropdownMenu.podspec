@@ -15,8 +15,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
 
   s.author       = { "Peng Guo" => "guoleii@gmail.com" }
-  s.social_media_url   = "https://twitter.com/NilStack"
-
+  
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/NilStack/NKDropdownMenu.git", :tag => "0.0.1" }
   s.source_files  = "NKDropdownMenu/*.swift"
