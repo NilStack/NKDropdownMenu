@@ -33,3 +33,4 @@ This code is distributed under the terms and conditions of the MIT license.
 
 ##Thanks##
 Awesome design by [Gal Shir](https://dribbble.com/galshir)
+Elegant dropdown menu [BTNavigationDropdownMenu](https://github.com/PhamBaTho/BTNavigationDropdownMenu) by [Pham Ba Tho](https://github.com/PhamBaTho)
