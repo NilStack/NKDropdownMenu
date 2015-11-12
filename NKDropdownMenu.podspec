@@ -6,6 +6,7 @@ Pod::Spec.new do |s|
   s.summary      = "A drop down menu inspired by https://dribbble.com/shots/2286361-Hamburger-Menu-Animation."
   s.description  = <<-DESC
                    A drop down menu inspired by https://dribbble.com/shots/2286361-Hamburger-Menu-Animation.
+                   It's not exactly the same as the original design.
 
                    DESC
 
@@ -14,11 +15,11 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
 
   s.author       = { "Peng Guo" => "guoleii@gmail.com" }
-  s.social_media_url   = "http://twitter.com/NilStack"
+  s.social_media_url   = "https://twitter.com/NilStack"
 
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/NilStack/NKDropdownMenu.git", :tag => "0.0.1" }
   s.source_files  = "NKDropdownMenu/*.swift"
   s.requires_arc = true
-  
+
 end
