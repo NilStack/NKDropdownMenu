@@ -18,20 +18,7 @@ func delay(seconds seconds: Double, completion:()->()) {
 
 
 class NKDropdownMenu: UIView {
-    
-    /*
-    
-    self.barButtonItemWidth = 30.0
-    self.barButtonItemHeight = 30.0
-    self.menuCellHeight = 44.0
-    self.menuCellBackgroundColor = UIColor.whiteColor()
-    self.lineColor = UIColor.grayColor()
-    self.menuCellTextLabelColor = UIColor.blackColor()
-    self.menuCellTextLabelFont = UIFont.systemFontOfSize(17.0)
-    self.menuCellSelectionColor = UIColor.grayColor()
-
-*/
-    
+      
     var barButtonItemWidth: CGFloat! {
         get {
             return self.configuration.barButtonItemWidth
