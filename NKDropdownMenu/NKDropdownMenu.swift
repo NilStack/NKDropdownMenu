@@ -18,7 +18,7 @@ func delay(seconds seconds: Double, completion:()->()) {
 
 
 class NKDropdownMenu: UIView {
-      
+    
     var barButtonItemWidth: CGFloat! {
         get {
             return self.configuration.barButtonItemWidth
@@ -138,7 +138,6 @@ class NKDropdownMenu: UIView {
         
         // Init background view (under table view)
         self.backgroundView = UIView(frame: menuWrapperBounds)
-
         self.backgroundView.autoresizingMask = UIViewAutoresizing.FlexibleWidth.union(UIViewAutoresizing.FlexibleHeight)
         self.menuWrapper.addSubview(self.backgroundView)
         
@@ -370,7 +369,7 @@ class NKDropdownMenuLinesView: UIView {
 class NKDropdownMenuTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
     
     let statusbarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
-    let sceenWidth = UIScreen.mainScreen().bounds.size.width
+    let screenWidth = UIScreen.mainScreen().bounds.size.width
     
     var configuration: NKDropdownMenuConfiguration!
     var selectRowAtIndexPathHandler: ((indexPath: Int) -> ())?
@@ -423,6 +422,7 @@ class NKDropdownMenuTableView: UITableView, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = NKDropdownMenuViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell", configuration: self.configuration)
+
         cell.textLabel?.text = self.items[indexPath.row]
         cell.textLabel?.font = self.configuration.menuCellTextLabelFont
         cell.textLabel?.textColor = self.configuration.menuCellTextLabelColor
@@ -441,11 +441,11 @@ class NKDropdownMenuTableView: UITableView, UITableViewDelegate, UITableViewData
             
             cell.alpha = 0
             
-            let cellOriginalX = cell.frame.origin.x
-            cell.frame.origin.x -= 10
+            let originalRect: CGRect = tableView.rectForRowAtIndexPath(indexPath)
+            
+            cell.frame = CGRectMake(cell.frame.origin.x - 10.0, cell.frame.origin.y, cell.frame.size.width + 10.0, cell.frame.size.height)
             cell.textLabel?.alpha = 0
 
-        
             UIView.animateWithDuration(1.0, delay: 0.0, options: [], animations: { () -> Void in
             
                 cell.alpha = 1.0
@@ -454,10 +454,12 @@ class NKDropdownMenuTableView: UITableView, UITableViewDelegate, UITableViewData
             UIView.animateWithDuration(1.0, delay:1.0+Double(indexPath.row)*0.5, options: [], animations: { () -> Void in
             
                 cell.textLabel?.alpha = 1.0
-                cell.frame.origin.x = cellOriginalX
+                cell.frame = originalRect
             
-            
-            }, completion: nil)
+                }, completion: { _ in
+                    
+                    cell.frame = CGRectMake(originalRect.origin.x, originalRect.origin.y, originalRect.size.width + 10.0, originalRect.size.height)
+            })
         
         }
     }
@@ -491,8 +493,8 @@ class NKDropdownMenuViewCell: UITableViewCell {
         self.configuration = configuration
         
         self.seperator = UIView(frame: CGRectMake(0.0, self.configuration.menuCellHeight - 1.0, screenWidth + 10.0, 1.0))
-        
         self.seperator.backgroundColor = UIColor.grayColor()
+        
         self.addSubview(seperator)
         
     }
@@ -500,7 +502,7 @@ class NKDropdownMenuViewCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 }
 
 extension UIViewController {
