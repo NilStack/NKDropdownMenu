@@ -10,16 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var selectedCellLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         let items = ["Most Popular", "Latest", "Trending", "Nearest", "Top Picks"]
         
+        self.selectedCellLabel.text = items.first
+        self.navigationController?.navigationBar.translucent = false
+               
         let dropdownMenu: NKDropdownMenu = NKDropdownMenu(items: items)
-        
         dropdownMenu.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
             print("Did select item at index: \(indexPath)")
+            self.selectedCellLabel.text = items[indexPath]
             
         }
         

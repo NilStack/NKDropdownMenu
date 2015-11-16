@@ -19,6 +19,91 @@ func delay(seconds seconds: Double, completion:()->()) {
 
 class NKDropdownMenu: UIView {
     
+    /*
+    
+    self.barButtonItemWidth = 30.0
+    self.barButtonItemHeight = 30.0
+    self.menuCellHeight = 44.0
+    self.menuCellBackgroundColor = UIColor.whiteColor()
+    self.lineColor = UIColor.grayColor()
+    self.menuCellTextLabelColor = UIColor.blackColor()
+    self.menuCellTextLabelFont = UIFont.systemFontOfSize(17.0)
+    self.menuCellSelectionColor = UIColor.grayColor()
+
+*/
+    
+    var barButtonItemWidth: CGFloat! {
+        get {
+            return self.configuration.barButtonItemWidth
+        }
+        set(value) {
+            self.configuration.barButtonItemWidth = value
+        }
+    }
+    
+    var barButtonItemHeight: CGFloat! {
+        get {
+            return self.configuration.barButtonItemHeight
+        }
+        set(value) {
+            self.configuration.barButtonItemHeight = value
+        }
+    }
+    
+    var menuCellHeight: CGFloat! {
+        get {
+            return self.configuration.menuCellHeight
+        }
+        set(value) {
+            self.configuration.menuCellHeight = value
+        }
+    }
+    
+    var menuCellBackgroundColor: UIColor! {
+        get {
+            return self.configuration.menuCellBackgroundColor
+        }
+        set(value) {
+            self.configuration.menuCellBackgroundColor = value
+        }
+    }
+    
+    var menuCellTextLabelColor: UIColor! {
+        get {
+            return self.configuration.menuCellTextLabelColor
+        }
+        set(value) {
+            self.configuration.menuCellTextLabelColor = value
+        }
+    }
+    
+    var menuCellTextLabelFont: UIFont! {
+        get {
+            return self.configuration.menuCellTextLabelFont
+        }
+        set(value) {
+            self.configuration.menuCellTextLabelFont = value
+        }
+    }
+
+    var menuCellSelectionColor: UIColor! {
+        get {
+            return self.configuration.menuCellSelectionColor
+        }
+        set(value) {
+            self.configuration.menuCellSelectionColor = value
+        }
+    }
+    
+    var lineColor: UIColor! {
+        get {
+            return self.configuration.lineColor
+        }
+        set(value) {
+            self.configuration.lineColor = value
+        }
+    }
+    
     let statusbarHeight: CGFloat = UIApplication.sharedApplication().statusBarFrame.size.height
     
     var didSelectItemAtIndexHandler: ((indexPath: Int) -> ())?
