@@ -1,3 +1,4 @@
 language: objective-c
 xcode_project: NKDropdownMenuDemo.xcodeproj # path to your xcodeproj folder
 xcode_scheme: NKDropdownMenuDemo
+script: xctool -project NKDropdownMenuDemo.xcodeproj -scheme NKDropdownMenuDemo build  CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
