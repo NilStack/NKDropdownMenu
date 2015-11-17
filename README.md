@@ -1,5 +1,5 @@
 # NKDropdownMenu
-
+ ![Build](https://travis-ci.org/NilStack/NKDropdownMenu.svg)
  ![Verision](https://img.shields.io/badge/pod-v0.1.0-blue.svg)
  ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
