@@ -9,7 +9,7 @@ A drop down menu inspired by https://dribbble.com/shots/2286361-Hamburger-Menu-A
 
 ##Usage##
 
-###Cocoapods###
+###CocoaPods###
 
      pod 'NKDropdownMenu'
 
